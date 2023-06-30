@@ -12,9 +12,9 @@ function Card({ item, price, ind, viewMenu, type }) {
           <Image
             className="navbarBrand mx-auto"
             src={imageurl}
-            alt="Ajay Kumar"
-            height={600}
-            width={800}
+            alt="Food-Gram"
+            height={200}
+            width={300}
           />
         </div>
         <div className="textsec p-3">
@@ -24,14 +24,12 @@ function Card({ item, price, ind, viewMenu, type }) {
           </h3>
         </div>
         <div className="footer mt-4">
-          {type == 'main' ? 
-          <button className="btn bg-purple-500
-           text-white py-1 px-4 rounded active:top-3"
-            onClick={() => viewMenu(ind)}> View Menu </button>:
-          <div className='count-Box text-right'>
-              <button className="btn btn bg-purple-500
-           text-white py-1 px-4 rounded active:top-3"> Add to Cart</button>
-          </div>
+          {type == 'main' ?
+            <button className="common-btn"
+              onClick={() => viewMenu(ind)}> View Menu </button> :
+            <div className='count-Box text-right'>
+              <button className="common-btn"> Add to Cart</button>
+            </div>
           }
         </div>
       </div>

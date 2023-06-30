@@ -1,4 +1,5 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Basics/Navbar";
+import Sidebar from "../components/Basics/Sidebar";
 import Card from "../components/Card";
 import { categories } from "../utils/categories";
 import { useState } from "react";
@@ -13,24 +14,23 @@ export default function Home() {
   }
 
   return (
-    <div className="p-5 xl:px-20 bg-purple-300 min-h-screen">
+    <div className="min-h-screen">
       <Navbar />
+      <Sidebar />
       <div className="flex flex-wrap py-10">
 
-      <div className="top-btn w-full">
+        <div className="top-btn w-full">
           {detailMode &&
             <div className="tophead flex justify-between bg-white p-5 rounded mb-5 mx-3">
-               <h3 className="text-purple-500 md:font-bold text-2xl"> {categories[currInd].category} </h3>
-               
-              <button className="btn bg-purple-500
-           text-white py-1 px-4 rounded"
+              <h3 className="theme-color md:font-bold text-2xl"> {categories[currInd].category} </h3>
+
+              <button className="common-btn"
                 onClick={() => setDetailMode(!detailMode)}>
                 Main Menu
               </button>
-             
+
             </div>}
         </div>
-
 
         {detailMode ? <> {categories[currInd].items?.map((item, i) => {
           return <Card item={item.item}
@@ -47,6 +47,7 @@ export default function Home() {
               type='main'
               key={i} />
           })}</>}
+
       </div>
     </div>
   );

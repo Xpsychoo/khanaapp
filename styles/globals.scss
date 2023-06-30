@@ -1,3 +1,185 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --white-color: #ffffff;
+    --theme-color: #a855f7;
+    --black-color: #000000;
+    --box-shadow: #64646f33 0px 7px 29px 0px;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+.theme-color {
+    color: var(--theme-color);
+}
+
+@mixin bshadow () {
+    background-color: var(--white-color);
+    box-shadow: var(--box-shadow);
+}
+
+.card {
+    @include bshadow();
+}
+
+.mainwrapper {
+    max-width: 765px;
+    margin: auto;
+    position: relative
+}
+
+.customnavbar {
+    @include bshadow();
+    z-index: 9;
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .leftside {
+        display: flex;
+        align-items: center;
+
+
+        .BarsIcon {
+            width: 20px;
+            height: 20px;
+            margin: 0px 10px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: var(--theme-color);
+            }
+        }
+
+        .location-icon {
+            width: 18px;
+            height: 18px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: var(--theme-color);
+            }
+        }
+
+        .locationBox {
+            margin-left: 5px;
+
+            .locationname {
+                font-size: 18px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                letter-spacing: 0.5px;
+
+                svg {
+                    width: 10px;
+                    height: 10px;
+                    margin: 6px 0px 0px 7px;
+                }
+            }
+
+            .locationaddress {
+                font-size: 12px;
+                font-weight: normal;
+            }
+        }
+
+    }
+
+    .rightside {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .filter-btn {
+            width: 25px;
+            height: 25px;
+            margin: auto 0px auto 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 100%;
+                rotate: 90deg;
+                fill: var(--theme-color);
+            }
+        }
+    }
+
+
+}
+
+.common-btn {
+    background-color: var(--theme-color);
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.sidebarWrapper {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    z-index: 15;
+    backdrop-filter: blur(5px);
+    background-color: #0003;
+    .sidebarmain {
+        width: 60%;
+        background-color: #fff;
+        height: 100vh;
+        padding: 10px;
+        min-height: 100vh;
+        position: relative;
+
+        .navclose {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            height: 8vh;
+
+            .text {
+                color: var(--theme-color);
+                font-weight: 700;
+                font-size: 20px;
+            }
+            .icon{
+                width: 25px;
+                height: 25px;
+
+                svg{
+                    width: 100%;
+                    height: 100%;
+                    fill: var(--theme-color);
+                }
+            }
+        }
+
+        .sidelist{
+            
+            .list-item{
+                padding: 5px;
+                border-bottom: 1px solid var(--theme-color);
+                font-size: 17px;
+
+                &:first-child{
+                    border-top: 1px solid var(--theme-color);
+                }
+            }
+        }
+    }
+
+}

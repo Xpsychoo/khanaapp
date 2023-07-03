@@ -131,6 +131,7 @@ body {
 .sidebarWrapper {
     position: fixed;
     top: 0px;
+    max-width: 765px;
     width: 100%;
     z-index: 15;
     backdrop-filter: blur(5px);

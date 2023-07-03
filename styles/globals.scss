@@ -130,16 +130,16 @@ body {
 
 .sidebarWrapper {
     position: fixed;
-    left: 0px;
     top: 0px;
-    width: 100vw;
+    width: 100%;
     z-index: 15;
     backdrop-filter: blur(5px);
     background-color: #0003;
+
     .sidebarmain {
         width: 60%;
         background-color: #fff;
-        height: 100vh;
+        height: 100%;
         padding: 10px;
         min-height: 100vh;
         position: relative;
